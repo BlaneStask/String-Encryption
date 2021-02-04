@@ -1,7 +1,6 @@
 /*
 Name: Blane Staskiewicz
-Description: This program takes a string input to be
-encrypted based off of 
+Description: This program takes a string input to be encrypted based off of the encryption scheme
 */ 
 
 package encryption;
