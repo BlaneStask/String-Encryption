@@ -17,8 +17,19 @@ public class encryption
 		Scanner s = new Scanner(System.in);
 		System.out.print("Input string for encryption: ");
 		String input = s.nextLine().replaceAll("\\s+","");
+		System.out.print(encrypt(input));
+	}
+	public static String encrypt(String s) 
+	{
+		int L = s.length();
+		String encryption = "";
 		
-		int L = input.length();
+		// checks constraints
+		if(L < 1 || L > 81) {
+			encryption = "String is too long";
+			return encryption;
+		}
+		
 		int row = 0;
 		int col = 0;
 		int index = 0;
@@ -36,7 +47,6 @@ public class encryption
 			
 			if(row * col < L) row += 1;
 		}
-		
 		// creates 2D array based off dimensions
 		char[][] arr = new char[row][col];
 		for(int i = 0; i < row; i++) 
@@ -47,13 +57,13 @@ public class encryption
 				if(index >= L);
 				else 
 				{
-					arr[i][j] = input.charAt(index);
+					arr[i][j] = s.charAt(index);
 					index++;
 				}
 			}
 		}
 		
-		// outputs the encrypted string by col + " "
+		// encrypts string by col + " "
 		index = 0;
 		System.out.print("Encrypted string: ");
 		for(int i = 0; i < col; i++) 
@@ -64,11 +74,12 @@ public class encryption
 				if(index > L) break; 
 				else 
 				{
-					if(j == row - 1) System.out.print(arr[j][i] + " ");
-					else System.out.print(arr[j][i]);
+					if(j == row - 1) encryption += arr[j][i] + " ";
+					else encryption += arr[j][i];
 					index++;
 				}
 			}
 		}
+		return encryption;
 	}
 }
