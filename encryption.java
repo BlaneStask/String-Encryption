@@ -10,7 +10,6 @@ import java.lang.Math;
 public class encryption
 { 
 	/** This method is the main/driver method
-	 *  
 	 */
 	public static void main(String[] args)
 	{
@@ -19,6 +18,8 @@ public class encryption
 		String input = s.nextLine().replaceAll("\\s+","");
 		System.out.print(encrypt(input));
 	}
+	/** This method encrypts the input string 
+	 */
 	public static String encrypt(String s) 
 	{
 		int L = s.length();
@@ -52,7 +53,6 @@ public class encryption
 		char[][] arr = new char[row][col];
 		for(int i = 0; i < row; i++) 
 		{
-			
 			for(int j = 0; j < col; j++) 
 			{
 				if(index >= L);
@@ -69,7 +69,6 @@ public class encryption
 		System.out.print("Encrypted string: ");
 		for(int i = 0; i < col; i++) 
 		{
-			
 			for(int j = 0; j < row; j++) 
 			{
 				if(index > L) break; 
