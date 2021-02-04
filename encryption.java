@@ -25,7 +25,8 @@ public class encryption
 		String encryption = "";
 		
 		// checks constraints
-		if(L < 1 || L > 81) {
+		if(L < 1 || L > 81) 
+		{
 			encryption = "String is too long";
 			return encryption;
 		}
