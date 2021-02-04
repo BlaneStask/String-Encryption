@@ -3,7 +3,9 @@
 
 An English text needs to be encrypted using the following encryption scheme. First, the spaces are removed from the text. Let be the length of this text. Then, characters are written into a grid, whose rows and columns have the following constraints:
 
-
+<p align="center">
+<img src="encryption.png" width="1000">
+</p>
 
 For example, the sentence
 
