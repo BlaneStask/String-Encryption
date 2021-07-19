@@ -1,28 +1,40 @@
-/*
-Name: Blane Staskiewicz
-Description: This program takes a string input to be encrypted based off of the encryption scheme
-*/ 
-
 package encryption;
 import java.util.*;
 import java.lang.Math; 
 
+/**
+* <h1>String Encryption</h1>
+* This program takes a string input to be encrypted 
+* based off of the encryption scheme.
+*
+* @author  Blane Staskiewicz
+*/
 public class encryption
 { 
-	/** This method is the main/driver method
+	/**
+	 * The driver method that scans users input 
+	 * and calls encryptString method.
 	 */
 	public static void main(String[] args)
 	{
 		Scanner s = new Scanner(System.in);
 		System.out.print("Input string for encryption: ");
 		String input = s.nextLine().replaceAll("\\s+","");
-		System.out.print(encrypt(input));
+		System.out.print(encryptString(input));
 	}
-	/** This method encrypts the input string 
+	/** 
+	 * This method encrypts the input string 
+	 * using the encryption scheme.
+	 *
+	 * @param s Users string input
+	 * @return encryption Users encryped string
 	 */
-	public static String encrypt(String s) 
+	public static String encryptString(String s) 
 	{
 		int L = s.length();
+		int row = 0;
+		int col = 0;
+		int index = 0;
 		String encryption = "";
 		
 		// checks constraints
@@ -31,10 +43,6 @@ public class encryption
 			encryption = "String does not meet length parameters";
 			return encryption;
 		}
-		
-		int row = 0;
-		int col = 0;
-		int index = 0;
 		
 		// gets correct row x col dimensions
 		if(Math.sqrt(L) % 1 == 0) 
